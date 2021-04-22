@@ -68,17 +68,17 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return data.isEmpty();
     }
 
     @Override
     public int size() {
-        return 0;
+        return data.size();
     }
 
     @Override
     public void clear() {
-
+        data.clear();
     }
 
     protected void pushDownRoot(int root)
@@ -117,18 +117,23 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 
     @Override
     public E getFirst() {
-        return null;
+        return data.firstElement();
     }
 
     public E remove()
     // pre: !isEmpty()
     // post: returns and removes minimum value from queue
     {
-        E minVal = getFirst();
-        data.set(0,data.get(data.size()-1));
-        data.setSize(data.size()-1);
-        if (data.size() > 1) pushDownRoot(0);
-        return minVal;
+        if(!isEmpty()){
+            E minVal = getFirst();
+            data.set(0,data.get(data.size()-1));
+            data.setSize(data.size()-1);
+            if (data.size() > 1) pushDownRoot(0);
+            return minVal;
+
+        }
+        return null;
+
     }
 
 }

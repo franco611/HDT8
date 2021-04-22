@@ -8,26 +8,76 @@ import java.io.BufferedWriter;
 class Main {
     public static void main(String[]args){
         int res = 0;
-        int res2 = 0;
-        String idioma = "";
+
         Scanner s = new Scanner(System.in);
         System.out.println("Bienvenido al Sistema del hospital ");
-        System.out.println("");
+        System.out.println("Indique el idioma del texto que desea traducir");
+        System.out.println("[ 1 ] VectorHeap de Java Colection.");
+        System.out.println("[ 2 ] VectorHeap propio.");
 
+        while(true){
+            try{
+                res = s.nextInt();
 
+                if(res>=1 && res<=2){
+                    break;
+                }else{
+                    System.out.println("Ingrese valores entre 1 y 2 !");
+                }
+            }catch(Exception e){
+                System.out.println("Ingrese valores numericos ! ! !");
+            }
+        }
 
-        try{
-            File file = new File("pacientes.txt");
-            Scanner input = new Scanner (file);
-            while(input.hasNextLine()){
-                String dato = input.nextLine();
-                String[] partes = dato.split(",");
-                System.out.println("El paciente: "+partes[0]+"tiene:"+partes[1]+" es de prioridad:"+partes[2]);
+        if(res==1){
+            VectorHeapJC<Paciente> almacen = new VectorHeapJC<Paciente>();
+
+            try{
+                File file = new File("pacientes.txt");
+                Scanner input = new Scanner (file);
+                while(input.hasNextLine()){
+                    String dato = input.nextLine();
+                    String[] partes = dato.split(",");
+                    Paciente temp = new Paciente(partes[0],partes[1],partes[2].trim());
+
+                    almacen.add(temp);
+                }
+
+            }catch (Exception e) {
+                e.printStackTrace();
             }
 
-        }catch (Exception e) {
-            e.printStackTrace();
+            int tamao = almacen.size();
+            for (int i=0; i<tamao;i++){
+                System.out.println(almacen.remove());
+            }
+
+        }else{
+            VectorHeapJC<Paciente> almacen = new VectorHeapJC<Paciente>();
+
+            try{
+                File file = new File("pacientes.txt");
+                Scanner input = new Scanner (file);
+                while(input.hasNextLine()){
+                    String dato = input.nextLine();
+                    String[] partes = dato.split(",");
+                    Paciente temp = new Paciente(partes[0],partes[1],partes[2].trim());
+
+                    almacen.add(temp);
+                }
+
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            int tamao = almacen.size();
+            for (int i=0; i<tamao;i++){
+                System.out.println(almacen.remove());
+            }
         }
+
+
+
 
     }
 }
