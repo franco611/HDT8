@@ -1,23 +1,47 @@
+/**
+ * @author Diego Franco
+ * @version 22/04/2021
+ * @since 20/04/2021
+ *
+ * Interfaz PriorityQueue en la que se basa el VectorHeap para poder trabajar las comparaciones.
+ */
 public interface PriorityQueue<E extends Comparable<E>>
 {
+    /**
+     *
+     * @return regresa el primer valor almacenado.
+     */
     public E getFirst();
-    // pre: !isEmpty()
-    // post: returns the minimum value in priority queue
 
+
+    /**
+     *
+     * @return regresa y elimina el valor mas pequeño.
+     */
     public E remove();
-    // pre: !isEmpty()
-    // post: returns and removes minimum value from queue
 
+    /**
+     *
+     * @param value recibe el valor que se agregara.
+     */
     public void add(E value);
-    // pre: value is non-null comparable
-    // post: value is added to priority queue
 
+    /**
+     *
+     * @return regresa verdadero si no hay elementos guardados.
+     */
     public boolean isEmpty();
-    // post: returns true iff no elements are in queue
 
+    /**
+     *
+     * @return regresa el numero de elementos almacenados.
+     */
     public int size();
-    // post: returns number of elements within queue
 
+
+    /**
+     * Borra todos los elementos agregados.
+     */
     public void clear();
     // post: removes all elements from queue
 }

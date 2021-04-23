@@ -1,3 +1,10 @@
+/**
+ * @author Diego Franco
+ * @version 22/04/2021
+ * @since 20/04/2021
+ *
+ * Clase main que inicia el programa
+ */
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -6,12 +13,16 @@ import java.util.*;
 import java.io.BufferedWriter;
 
 class Main {
+    /**
+     *
+     * @param args main para ejecutar el programa
+     */
     public static void main(String[]args){
         int res = 0;
 
         Scanner s = new Scanner(System.in);
         System.out.println("Bienvenido al Sistema del hospital ");
-        System.out.println("Indique el idioma del texto que desea traducir");
+        System.out.println("Indique el tipo de VectorHeap que desea utilizar:");
         System.out.println("[ 1 ] VectorHeap de Java Colection.");
         System.out.println("[ 2 ] VectorHeap propio.");
 
