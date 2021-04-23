@@ -59,8 +59,9 @@ class Main {
             }
 
             int tamao = almacen.size();
+            System.out.println("El orden de atencion a los pacientes debe ser el siguiente:");
             for (int i=0; i<tamao;i++){
-                System.out.println(almacen.remove());
+                System.out.println("No°"+(i+1)+" "+almacen.remove());
             }
 
         }else{
@@ -82,8 +83,9 @@ class Main {
             }
 
             int tamao = almacen.size();
+            System.out.println("El orden de atencion a los pacientes debe ser el siguiente:");
             for (int i=0; i<tamao;i++){
-                System.out.println(almacen.remove());
+                System.out.println("No°"+(i+1)+" "+almacen.remove());
             }
         }
 
