@@ -64,7 +64,7 @@ class Main {
             }
 
         }else{
-            VectorHeapJC<Paciente> almacen = new VectorHeapJC<Paciente>();
+            VectorHeap<Paciente> almacen = new VectorHeap<Paciente>();
 
             try{
                 File file = new File("pacientes.txt");
